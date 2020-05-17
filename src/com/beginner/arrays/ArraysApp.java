@@ -7,7 +7,7 @@ public class ArraysApp {
         lotteryNumbers[0] = 17;
         lotteryNumbers[1] = 23;
         lotteryNumbers[2] = 67;
-        lotteryNumbers[3] = 37;
+        lotteryNumbers[3] = 38;
         lotteryNumbers[4] = 11;
 
 
