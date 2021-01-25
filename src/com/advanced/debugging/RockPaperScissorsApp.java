@@ -16,11 +16,11 @@ public class RockPaperScissorsApp {
             System.out.print("Your move: ");
             String userMove = inputScanner.nextLine().toLowerCase();
 
-            if (userMove.equals("quit")){
+            if (userMove.equals("quit")) {
                 break;
             }
 
-            if (isValidInput(userMove)){
+            if (isValidInput(userMove)) {
                 String opponentMove = generateOpponentMove();
                 System.out.println("Your opponent's move: " + opponentMove);
                 whoWon(userMove, opponentMove);
@@ -31,13 +31,13 @@ public class RockPaperScissorsApp {
         }
     }
 
-    private static boolean isValidInput(String userInput){
+    private static boolean isValidInput(String userInput) {
         return userInput.equals("rock") || userInput.equals("scissors") || userInput.equals("paper");
     }
 
-    private static String generateOpponentMove(){
+    private static String generateOpponentMove() {
         Random randomNumberGenerator = new Random();
-        switch (randomNumberGenerator.nextInt(13)){
+        switch (randomNumberGenerator.nextInt(3)){
             case 0:
             default:
                 return "rock";
