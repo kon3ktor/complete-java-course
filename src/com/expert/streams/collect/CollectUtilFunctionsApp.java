@@ -35,9 +35,5 @@ public class CollectUtilFunctionsApp {
                 .collect(Collectors.summarizingInt(Integer::intValue))
         );
 
-
-
-
-
     }
 }

@@ -12,6 +12,7 @@ public class GenericsWeirdPartApp {
         GenericFunctions.displayToString(lotteryNumbers);
 
         GenericFunctions<Double> genericFunctions = new GenericFunctions<>();
+        //Remove the comment to see the issue with taking lotteryNumbers as parameter
         //genericFunctions.printSimpleGenerics(lotteryNumbers);
     }
 }
