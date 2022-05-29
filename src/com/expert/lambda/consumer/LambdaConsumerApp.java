@@ -18,7 +18,7 @@ public class LambdaConsumerApp {
         List<Integer> numbers = Arrays.asList(5,4,3,2,1);
         multiplyNumbers.accept(numbers);
         System.out.println(numbers);
-
+        System.out.println("numbers after manipulated");
 
     }
 }
