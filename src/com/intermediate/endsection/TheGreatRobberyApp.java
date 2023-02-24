@@ -7,6 +7,7 @@ public class TheGreatRobberyApp {
         Gang theGang = new Gang();
         Police police = new Police();
         theGang.printGangInfo();
+        System.out.println();
         do {
             theGang.letsRob(city.getBuildings());
         } while (!police.catchCriminals(theGang));

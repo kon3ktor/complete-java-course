@@ -42,7 +42,7 @@ public class Gang {
     }
 
     public void letsRob(Building[] buildings) {
-        int randomBuildingIndex = randomNumberGenerator.nextInt(buildings.length + 1);
+        int randomBuildingIndex = randomNumberGenerator.nextInt(buildings.length);
         System.out.println("-------------------------------");
         if (isSuccessfulRobbery()) {
             System.out.println("The gang managed to rob the following items from the " + buildings[randomBuildingIndex].getName() + ":");
