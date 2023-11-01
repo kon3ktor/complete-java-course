@@ -42,6 +42,28 @@ public class Main {
             System.out.println(letter);
         }
 
+        ArrayListG<Integer> intList = new ArrayListG<>();
+        System.out.println(intList.size());
+        System.out.println(intList.capacity());
+        intList.add(1);
+        intList.add(3);
+        intList.add(4);
+        intList.add(5);
+
+        System.out.println(intList.size());
+        System.out.println(intList.capacity());
+
+        for (Integer number : intList) {
+            System.out.print(number + ",");
+        }
+        System.out.println();
+
+        intList.spofArray(intList);
+        intList.printPairs(intList);
+        intList.reverseArray(intList);
+        for (Integer number : intList) {
+            System.out.print(number + ",");
+        }
 
     }
 }

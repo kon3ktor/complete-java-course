@@ -7,7 +7,7 @@ public class ArrayListG <T> implements Iterable<T>{
     private int size;
 
     public ArrayListG(){
-        data = (T[]) new Object[10];
+        data = (T[]) new Object[5];
         size = 0;
     }
 
@@ -20,16 +20,47 @@ public class ArrayListG <T> implements Iterable<T>{
         return size;
     }
 
+    public int capacity(){
+        return data.length;
+    }
+
     public boolean isEmpty(){
         return size == 0;
     }
 
+    public void clear(){
+        data = (T[]) new Object[5];
+        size = 0;
+    }
+
+    public void shrink(){
+        T[] newData = (T[]) new Object[size];
+        for(int i = 0; i < size; i++){
+            newData[i] = data[i];
+        }
+        data = newData;
+    }
+
+    public void expandCapacity(){
+        T[] newData = (T[]) new Object[data.length*2];
+        for(int i = 0; i < data.length; i++){
+            newData[i] = data[i];
+        }
+        data = newData;
+    }
+
     public void add(T e){
+        if (size == data.length){
+            expandCapacity();
+        }
         data[size] = e;
         size++;
     }
 
     public void add (int index, T e){
+        if (size == data.length){
+            expandCapacity();
+        }
         for(int i = size; i > index; i--){
             data[i] = data[i-1];
         }
@@ -60,9 +91,22 @@ public class ArrayListG <T> implements Iterable<T>{
     }
 
     public void remove(T e){
+        if (capacity() > 5 && size < capacity()/4){
+            shrink();
+        }
         int index = indexOf(e);
         if(index == -1){
             return;
+        }
+        for (int i = index; i < size-1; i++){
+            data[i] = data[i+1];
+        }
+        size--;
+    }
+
+    public void remove(int index){
+        if (capacity() > 5 && size < capacity()/4){
+            shrink();
         }
         for (int i = index; i < size-1; i++){
             data[i] = data[i+1];
@@ -88,6 +132,33 @@ public class ArrayListG <T> implements Iterable<T>{
             current++;
             return e;
         }
-
     }
+
+    //3 LC exercises below
+    public void spofArray(ArrayListG data){
+        int sum = 0;
+        int product = 1;
+        for (int i = 0; i < data.size(); i++){
+            sum += (int) data.get(i);
+            product *= (int) data.get(i);
+        }
+        System.out.println("Sum: " + sum);
+        System.out.println("Product: " + product);
+    }
+
+    public void printPairs(ArrayListG data){
+        for (int i = 0; i < data.size(); i++){
+            for (int j = 0; j < data.size(); j++){
+                System.out.println("(" + data.get(i) + "," + data.get(j) + ")");
+            }
+        }
+    }
+
+    public void reverseArray(ArrayListG<T> data){
+        ArrayListG<T> newData = data;
+        for (int i = size-1; i >= 0; i--){
+            data.add(newData.get(i));
+        }
+    }
+
 }
