@@ -20,10 +20,10 @@ public class LinkedListApp {
 //        morningRoutine.add("Taking the dog for a walk");
 //        morningRoutine.add("Doing 32 push-ups");
 
-        morningRoutine.add("Brushing my teeth");
-        morningRoutine.addFirst("Taking the dog for a walk");
-        morningRoutine.push("Doing 32 push-ups");
-        morningRoutine.offer("Reading 1 chapter of a book");
+        // morningRoutine.add("Brushing my teeth");
+        // morningRoutine.addFirst("Taking the dog for a walk");
+        // morningRoutine.push("Doing 32 push-ups");
+        // morningRoutine.offer("Reading 1 chapter of a book");
 
 //        System.out.println("I used pop function: " + morningRoutine.pop());
 
