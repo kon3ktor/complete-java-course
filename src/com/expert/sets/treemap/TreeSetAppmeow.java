@@ -2,7 +2,7 @@ package com.expert.sets.treemap;
 
 import java.util.TreeSet;
 
-public class TreeSetApp {
+public class TreeSetAppmeow {
 
     public static void main(String[] args) {
 
